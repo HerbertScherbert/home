@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carmen Herbert | Learning Experience Portfolio</title>
+
+<style>
+
+:root{
+    --bg:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --card:#f8fafc;
+    --border:#e5e7eb;
+}
+
+.dark{
+    --bg:#0f172a;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --card:#1e293b;
+    --border:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    transition:.3s ease;
+}
+
+/* NAVIGATION */
+
+header{
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem 2rem;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--text);
+}
+
+.theme-btn{
+    border:none;
+    background:var(--card);
+    color:var(--text);
+    padding:.6rem;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    max-width:900px;
+    margin:auto;
+    padding:100px 20px 60px;
+}
+
+.breadcrumbs{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(3rem,6vw,5rem);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.meta{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.intro{
+    font-size:1.2rem;
+    color:var(--muted);
+}
+
+/* CONTENT */
+
+.content{
+    max-width:850px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.content h2{
+    margin:3rem 0 1rem;
+    font-size:2rem;
+}
+
+.content p{
+    margin-bottom:1.25rem;
+}
+
+.callout{
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+    margin:40px 0;
+}
+
+/* PLACEHOLDER IMAGES */
+
+.placeholder{
+    background:var(--card);
+    border:2px dashed var(--border);
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--muted);
+    font-weight:bold;
+    text-align:center;
+}
+
+.hero-placeholder{
+    height:500px;
+    margin:0 auto 50px;
+    max-width:1100px;
+}
+
+.project-placeholder{
+    height:300px;
+    margin-bottom:20px;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin:40px 0;
+    transition:.3s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+}
+
+.button{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+/* CTA */
+
+.cta{
+    background:var(--card);
+    text-align:center;
+    padding:80px 20px;
+    margin-top:60px;
+}
+
+.cta h2{
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid var(--border);
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background:var(--bg);
+        flex-direction:column;
+        padding:2rem;
+        border-bottom:1px solid var(--border);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="nav">
+
+<div class="logo">
+Carmen Herbert
+</div>
+
+<button id="menu-toggle" class="hamburger">
+☰
+</button>
+
+<div class="menu" id="menu">
+
+#homeHome</a>
+<a href="#process">
+<a hreflioPortfolio</a>
+<a hreftContact</a>
+
+<button id="theme-toggle" class="theme-btn">
+🌙
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<main>
+
+<section id="home" class="hero reveal">
+
+<div class="breadcrumbs">
+Home / Process / Portfolio / Contact
+</div>
+
+<h1>
+Designing Learning Experiences That Drive Performance
+</h1>
+
+<div class="meta">
+By Carmen Herbert · August 2026
+</div>
+
+<p class="intro">
+Replace this section with your personal introduction, professional background, and approach to creating engaging digital learning experiences.
+</p>
+
+</section>
+
+<div class="placeholder hero-placeholder reveal">
+1200 × 500 HERO IMAGE
+</div>
+
+<section id="process" class="content reveal">
+
+<h2>Why This Matters</h2>
+
+<p>
+Describe the challenge, business need, learner audience and project objectives.
+</p>
+
+<p>
+Explain why the solution was important and the impact it created.
+</p>
+
+<div class="callout">
+
+<h3>Key Insight</h3>
+
+<p>
+Highlight a lesson learned, innovative solution, or strategic recommendation.
+</p>
+
+</div>
+
+<h2>Approach</h2>
+
+<p>
+Describe your learning design process, tools, collaboration methods and key decisions.
+</p>
+
+</section>
+
+<section id="portfolio" class="content reveal">
+
+<div class="project-card">
+
+<div class="placeholder project-placeholder">
+800 × 300 PROJECT SCREENSHOT
+</div>
+
+<h3>Project Example</h3>
+
+<p>
+Add a description of your project, the challenge faced, your approach, and the results achieved.
+</p>
+
+#
+View Project
+</a>
+
+</div>
+
+</section>
+
+<section class="content reveal">
+
+<h2>Results</h2>
+
+<p>
+Summarise measurable outcomes, stakeholder feedback, learner impact, and future improvements.
+</p>
+
+</section>
+
+<section id="contact" class="cta reveal">
+
+<h2>
+Let's Create Something Amazing
+</h2>
+
+<p>
+Get in touch to discuss digital learning, instructional design, AI-enabled learning experiences, or collaborative projects.
+</p>
+
+<br>
+
+your@email.com
+Get In Touch
+</a>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Carmen Herbert</p>
+
+</footer>
+
+<script>
+
+/* Dark Mode */
+
+const themeToggle =
+document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+themeToggle.textContent =
+document.body.classList.contains("dark")
+? "☀️"
+: "🌙";
+
+});
+
+/* Mobile Menu */
+
+const menu =
+document.getElementById("menu");
+
+document
+.getElementById("menu-toggle")
+.addEventListener("click",()=>{
+
+menu.classList.toggle("active");
+
+});
+
+/* Scroll Animation */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("active");
+
+}
+
+});
+
+});
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
