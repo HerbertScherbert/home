@@ -1,6 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>:root{
+--text:#111827;
+--muted:#6b7280;
+--border:#e5e7eb;
+--bg:#ffffff;
+--card:#f8fafc;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:white;
+color:var(--text);
+line-height:1.8;
+}
+
+header{
+position:sticky;
+top:0;
+background:white;
+border-bottom:1px solid var(--border);
+z-index:100;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+padding:1.25rem 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:700;
+font-size:1.1rem;
+}
+
+.menu{
+display:flex;
+gap:2rem;
+}
+
+.menu a{
+text-decoration:none;
+color:var(--muted);
+}
+
+.hero{
+max-width:850px;
+margin:auto;
+padding:5rem 2rem 3rem;
+}
+
+.breadcrumbs{
+color:var(--muted);
+font-size:.9rem;
+margin-bottom:1rem;
+}
+
+.hero h1{
+font-size:clamp(3rem,6vw,5.5rem);
+line-height:1.05;
+margin-bottom:1.5rem;
+}
+
+.meta{
+color:var(--muted);
+margin-bottom:2rem;
+}
+
+.intro{
+font-size:1.3rem;
+color:var(--muted);
+}
+
+.feature-image{
+max-width:1100px;
+margin:auto;
+padding:2rem;
+}
+
+.feature-image img{
+width:100%;
+border-radius:24px;
+display:block;
+}
+
+.content{
+max-width:760px;
+margin:auto;
+padding:3rem 2rem;
+}
+
+.content h2{
+margin-top:3rem;
+margin-bottom:1rem;
+font-size:2rem;
+}
+
+.content p{
+margin-bottom:1.5rem;
+}
+
+.callout{
+background:var(--card);
+padding:2rem;
+border-radius:20px;
+margin:2rem 0;
+}
+
+.project-card{
+display:grid;
+grid-template-columns:300px 1fr;
+gap:2rem;
+margin:3rem 0;
+padding:1.5rem;
+border:1px solid var(--border);
+border-radius:20px;
+}
+
+.project-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:16px;
+}
+
+.button{
+display:inline-block;
+margin-top:1rem;
+padding:12px 20px;
+background:#111827;
+color:white;
+text-decoration:none;
+border-radius:12px;
+}
+
+.cta{
+text-align:center;
+padding:6rem 2rem;
+background:#f8fafc;
+}
+
+.cta h2{
+font-size:3rem;
+margin-bottom:1rem;
+}
+
+footer{
+text-align:center;
+padding:2rem;
+border-top:1px solid var(--border);
+color:var(--muted);
+}
+
+@media (max-width:768px){
+
+.project-card{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.menu{
+display:none;
+}
+
+}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
