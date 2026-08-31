@@ -1,29 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carmen Herbert | Learning Experience Portfolio</title>
+
 <style>
 
-body{
-    font-family: Arial, sans-serif;
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
+:root{
+    --bg:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --card:#f8fafc;
+    --border:#e5e7eb;
 }
+
+.dark{
+    --bg:#0f172a;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --card:#1e293b;
+    --border:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    transition:.3s ease;
+}
+
+/* NAVIGATION */
+
+header{
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem 2rem;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--text);
+}
+
+.theme-btn{
+    border:none;
+    background:var(--card);
+    color:var(--text);
+    padding:.6rem;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.hamburger{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+/* HERO */
 
 .hero{
-    padding:60px 0;
+    max-width:900px;
+    margin:auto;
+    padding:100px 20px 60px;
 }
 
-h1{
-    font-size:3rem;
+.breadcrumbs{
+    color:var(--muted);
+    margin-bottom:20px;
 }
 
-img{
-    width:100%;
+.hero h1{
+    font-size:clamp(3rem,6vw,5rem);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.meta{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.intro{
+    font-size:1.2rem;
+    color:var(--muted);
+}
+
+/* CONTENT */
+
+.content{
+    max-width:850px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.content h2{
+    margin:3rem 0 1rem;
+    font-size:2rem;
+}
+
+.content p{
+    margin-bottom:1.25rem;
+}
+
+.callout{
+    background:var(--card);
+    padding:30px;
     border-radius:20px;
+    margin:40px 0;
+}
+
+/* PLACEHOLDER IMAGES */
+
+.placeholder{
+    background:var(--card);
+    border:2px dashed var(--border);
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:var(--muted);
+    font-weight:bold;
+    text-align:center;
+}
+
+.hero-placeholder{
+    height:500px;
+    margin:0 auto 50px;
+    max-width:1100px;
+}
+
+.project-placeholder{
+    height:300px;
+    margin-bottom:20px;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:20px;
+    margin:40px 0;
+    transition:.3s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+}
+
+.button{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+/* CTA */
+
+.cta{
+    background:var(--card);
+    text-align:center;
+    padding:80px 20px;
+    margin-top:60px;
+}
+
+.cta h2{
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid var(--border);
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background:var(--bg);
+        flex-direction:column;
+        padding:2rem;
+        border-bottom:1px solid var(--border);
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
 }
 
 </style>
+
 </head>
 
 <body>
@@ -33,14 +274,24 @@ img{
 <nav class="nav">
 
 <div class="logo">
-Portfolio
+Carmen Herbert
 </div>
 
-<div class="menu">
-#Home</a>
-#Process</a>
-#Portfolio</a>
-#Contact</a>
+<button id="menu-toggle" class="hamburger">
+☰
+</button>
+
+<div class="menu" id="menu">
+
+#homeHome</a>
+<a href="#process">
+<a hreflioPortfolio</a>
+<a hreftContact</a>
+
+<button id="theme-toggle" class="theme-btn">
+🌙
+</button>
+
 </div>
 
 </nav>
@@ -49,7 +300,7 @@ Portfolio
 
 <main>
 
-<section class="hero">
+<section id="home" class="hero reveal">
 
 <div class="breadcrumbs">
 Home / Process / Portfolio / Contact
@@ -60,106 +311,31 @@ Designing Learning Experiences That Drive Performance
 </h1>
 
 <div class="meta">
-By Carmen Herbert · Updated August 2026
+By Carmen Herbert · August 2026
 </div>
 
 <p class="intro">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed ut perspiciatis unde omnis iste natus error sit
-voluptatem accusantium doloremque laudantium.
+Replace this section with your personal introduction, professional background, and approach to creating engaging digital learning experiences.
 </p>
 
 </section>
 
-<section class="feature-image">
+<div class="placeholder hero-placeholder reveal">
+1200 × 500 HERO IMAGE
+</div>
 
-https://images.unsplash.com/photo-1516321318423-f06f85e504b3
-
-</section>
-
-<section class="content">
+<section id="process" class="content reveal">
 
 <h2>Why This Matters</h2>
 
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Ut enim ad minim veniam, quis nostrud exercitation.
+Describe the challenge, business need, learner audience and project objectives.
 </p>
 
 <p>
-Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur.
+Explain why the solution was important and the impact it created.
 </p>
 
 <div class="callout">
 
-<h3>Key Insight</h3>
-
-<p>
-Placeholder text for a highlighted insight, takeaway,
-or recommendation.
-</p>
-
-</div>
-
-<h2>Approach</h2>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Excepteur sint occaecat cupidatat non proident.
-</p>
-
-<div class="project-card">
-
-https://images.unsplash.com/photo-1498050108023-c5249f4df085
-
-<div>
-
-<h3>Example Project</h3>
-
-<p>
-Placeholder project description that explains a challenge,
-approach, and outcome.
-</p>
-
-#
-View Project
-</a>
-
-</div>
-
-</div>
-
-<h2>Results</h2>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-
-</section>
-
-<section class="cta">
-
-<h2>Let's Create Something Amazing</h2>
-
-<p>
-Reach out to discuss your next learning experience project.
-</p>
-
-#
-Get In Touch
-</a>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>© 2026 Portfolio Site</p>
-
-</footer>
-
-</body>
-</html>
+<h3>Key Insight</
