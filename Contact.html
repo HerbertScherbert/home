@@ -124,6 +124,14 @@ header{
     color:var(--muted);
     margin-bottom:20px;
 }
+.breadcrumbs a{
+    color:var(--muted);
+    text-decoration:none;
+    transition:.3s;
+}
+.breadcrumbs a:hover{
+color:#2563eb;
+}
 
 .hero h1{
     font-size:clamp(3rem,6vw,5rem);
@@ -319,7 +327,18 @@ Carmen Herbert
 <section id="home" class="hero reveal">
 
 <div class="breadcrumbs">
-Home / Process / Portfolio / Contact
+
+<a href="index.html">Home</a>
+<span>/</span>
+
+<a href="process.html">Process</a>
+<span>/</span>
+
+<a href="portfolio.html">Portfolio</a>
+<span>/</span>
+
+<a href="contact.html">Contact</a>
+
 </div>
 
 <h1>
