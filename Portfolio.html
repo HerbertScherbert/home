@@ -305,6 +305,9 @@ footer{
 
 </head>
 
+<body>
+
+<header>
 
 <nav class="nav">
 
@@ -323,7 +326,7 @@ Carmen Herbert
 <a href="Portfolio.html">Portfolio</a>
 <a href="Contact.html">Contact</a>
 
-    <button id="theme-toggle" class="theme-btn">
+<button id="theme-toggle" class="theme-btn">
 🌙
 </button>
 
@@ -338,11 +341,22 @@ Carmen Herbert
 <section id="home" class="hero reveal">
 
 <div class="breadcrumbs">
-Home / Process / Portfolio / Contact
+
+<a href="index.html">Home</a>
+<span>/</span>
+
+<a href="Process.html">Process</a>
+<span>/</span>
+
+<a href="Portfolio.html">Portfolio</a>
+<span>/</span>
+
+<a href="Contact.html">Contact</a>
+
 </div>
 
 <h1>
-Get Immersed in Some Engaging Learning Experiences
+Your Content. My Design. Exceptional Learning Experiences.
 </h1>
 
 <div class="meta">
@@ -350,10 +364,11 @@ By Carmen Herbert · August 2026
 </div>
 
 <p class="intro">
-My portfolio showcases a selection of learning experiences I have designed and developed across a range of industries and audiences. Each project demonstrates my approach to solving performance challenges through thoughtful instructional design, engaging interactions, and user-centred learning experiences.
+I design and develop engaging learning experiences that help people build knowledge, develop skills, and improve performance. With expertise spanning instructional design, eLearning development, learning technologies, and digital content creation, I create solutions that are both learner-focused and results-driven.
 
-From rapid digital learning solutions to fully bespoke eLearning programmes, the examples featured here highlight both the creative and technical aspects of my work. Every project is underpinned by a focus on meaningful outcomes, measurable impact, and an exceptional learner experience.</p>
+<p>My work combines creative thinking with practical application, transforming complex information into clear, accessible, and engaging learning experiences. From bespoke eLearning and video content to performance support resources and blended learning programmes, I focus on delivering learning that makes a measurable difference.
 
+</p>If you'd like to discuss a project, explore opportunities to collaborate, or learn more about my work, please get in touch. I'd be pleased to connect and discuss how effective learning design can support your organisation's goals.
 </section>
 
 <div class="placeholder hero-placeholder reveal">
@@ -479,6 +494,30 @@ menu.classList.toggle("active");
 
 });
 
+/* Active Page */
+ 
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document
+        .querySelectorAll(".menu a, .breadcrumbs a")
+        .forEach(link => {
+
+            const href = link.getAttribute("href");
+    
+            if (
+                href.toLowerCase() ===
+                currentPage.toLowerCase()
+            ) {
+                link.classList.add("active");
+            }
+        });
+});
+
+    
 /* Scroll Animation */
 
 const observer =
