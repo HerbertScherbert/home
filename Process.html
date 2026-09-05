@@ -43,6 +43,7 @@ body{
 }
 
 /* NAVIGATION */
+
 .menu a{
     text-decoration:none;
     color:var(--muted);
@@ -54,9 +55,18 @@ body{
 }
 
 .menu a.active{
+    color:#29cce6;
+    font-weight:700;
+}
+
+.menu a{
+    text-decoration:none;
     color:var(--text);
-    font-weight:bold;
-    border-bottom:2px solid #2563eb;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#29cce6;
 }
 
 header{
@@ -80,6 +90,7 @@ header{
 .logo{
     font-weight:bold;
     font-size:1.2rem;
+    color:#29cce6;
 }
 
 .menu{
@@ -122,6 +133,18 @@ header{
 .breadcrumbs{
     color:var(--muted);
     margin-bottom:20px;
+}
+.breadcrumbs a{
+    color:var(--muted);
+    text-decoration:none;
+    transition:.3s;
+}
+.breadcrumbs a:hover{
+    color:#29cce6;
+}
+.breadcrumbs a.active{
+    color:##29cce6;
+    font-weight:bold;
 }
 
 .hero h1{
