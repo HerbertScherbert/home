@@ -480,7 +480,28 @@ document
 menu.classList.toggle("active");
 
 });
+/* Active Page */
+ 
 
+document.addEventListener("DOMContentLoaded", () => {
+ 
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document
+        .querySelectorAll(".menu a, .breadcrumbs a")
+        .forEach(link => {
+
+            const href = link.getAttribute("href");
+    
+            if (
+                href.toLowerCase() ===
+                currentPage.toLowerCase()
+            ) {
+                link.classList.add("active");
+            }
+        });
+});
 /* Scroll Animation */
 
 const observer =
