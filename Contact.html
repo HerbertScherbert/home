@@ -55,9 +55,19 @@ body{
 }
 
 .menu a.active{
-    color:var(--text);
-    font-weight:bold;
+    color:#2563eb;
+    font-weight:700;
     border-bottom:2px solid #2563eb;
+}
+
+.menu a{
+    text-decoration:none;
+    color:var(--text);
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#2563eb;
 }
 
 header{
@@ -130,7 +140,11 @@ header{
     transition:.3s;
 }
 .breadcrumbs a:hover{
-color:#2563eb;
+    color:#2563eb;
+}
+.breadcrumbs a.active{
+    color:#2563eb;
+    font-weight:bold;
 }
 
 .hero h1{
@@ -480,6 +494,30 @@ menu.classList.toggle("active");
 
 });
 
+/* Active Page */
+ 
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document
+        .querySelectorAll(".menu a, .breadcrumbs a")
+        .forEach(link => {
+
+            const href = link.getAttribute("href");
+    
+            if (
+                href.toLowerCase() ===
+                currentPage.toLowerCase()
+            ) {
+                link.classList.add("active");
+            }
+        });
+});
+
+    
 /* Scroll Animation */
 
 const observer =
