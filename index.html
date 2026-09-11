@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Carmen Herbert | Learning Experience Portfolio</title>
-<link>images/favicon.png</link>
+
+images/favicon.png
+
 <style>
 
 :root{
@@ -14,6 +17,7 @@
     --muted:#6b7280;
     --card:#f8fafc;
     --border:#e5e7eb;
+    --brand:#29cce6;
 }
 
 .dark{
@@ -39,35 +43,9 @@ body{
     background:var(--bg);
     color:var(--text);
     line-height:1.7;
-    transition:.3s ease;
 }
 
 /* NAVIGATION */
-
-.menu a{
-    text-decoration:none;
-    color:var(--muted);
-    padding-bottom:5px;
-}
-
-.menu a:hover{
-    color:var(--text);
-}
-
-.menu a.active{
-    color:#29cce6;
-    font-weight:700;
-}
-
-.menu a{
-    text-decoration:none;
-    color:var(--text);
-    transition:.3s;
-}
-
-.menu a:hover{
-    color:#29cce6;
-}
 
 header{
     position:sticky;
@@ -88,15 +66,15 @@ header{
 }
 
 .logo{
+    color:var(--brand);
     font-weight:bold;
     font-size:1.2rem;
-    color:#29cce6;
 }
 
 .menu{
     display:flex;
-    align-items:center;
     gap:2rem;
+    align-items:center;
 }
 
 .menu a{
@@ -104,10 +82,12 @@ header{
     color:var(--text);
 }
 
+.menu a:hover{
+    color:var(--brand);
+}
+
 .theme-btn{
     border:none;
-    background:var(--card);
-    color:var(--text);
     padding:.6rem;
     border-radius:8px;
     cursor:pointer;
@@ -115,9 +95,8 @@ header{
 
 .hamburger{
     display:none;
-    background:none;
     border:none;
-    color:var(--text);
+    background:none;
     font-size:1.5rem;
     cursor:pointer;
 }
@@ -125,54 +104,9 @@ header{
 /* HERO */
 
 .hero{
-    max-width:900px;
-    margin:auto;
-    padding:100px 20px 60px;
-}
-.hero-image{
-    width:100%;
     max-width:1100px;
-    height:500px;
-    margin:0 auto 50px;
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    border-radius:20px;
-}
-
-.home-hero{
-    background-image:url('images/home-hero.png');
-}
-
-.process-hero{
-    background-image:url('images/process-hero.png');
-}
-
-.portfolio-hero{
-    background-image:url('images/portfolio-hero.png');
-}
-
-.contact-hero{
-    background-image:url('images/contact-hero.png');
-}
-    
-.breadcrumbs{
-    color:var(--muted);
-    margin-bottom:20px;
-}
-.breadcrumbs a{
-    color:var(--muted);
-    text-decoration:none;
-    transition:.3s;
-}
-.breadcrumbs a:hover{
-    color:#29cce6;
-}
-.breadcrumbs a.active{
-    color:#29cce6;
-    font-weight:bold;
+    margin:auto;
+    padding:80px 20px;
 }
 
 .hero h1{
@@ -187,92 +121,107 @@ header{
 }
 
 .intro{
-    font-size:1.2rem;
+    font-size:1.15rem;
     color:var(--muted);
+    margin-bottom:40px;
 }
 
-/* CONTENT */
+.hero-image{
+    width:100%;
+    height:500px;
+    border-radius:20px;
+    background-image:url('images/home-hero.png');
+    background-size:cover;
+    background-position:center;
+}
+
+/* SECTION */
 
 .content{
-    max-width:850px;
+    max-width:1100px;
     margin:auto;
     padding:40px 20px;
 }
 
 .content h2{
-    margin:3rem 0 1rem;
-    font-size:2rem;
+    margin-bottom:20px;
 }
 
 .content p{
-    margin-bottom:1.25rem;
+    margin-bottom:20px;
 }
 
 .callout{
     background:var(--card);
+    border-radius:20px;
     padding:30px;
-    border-radius:20px;
-    margin:40px 0;
-}
-.portfolio-slider::before,
-.portfolio-slider::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    z-index: 2;
+    margin:30px 0;
 }
 
-.portfolio-slider::before {
-    left: 0;
-    background: linear-gradient(to right, white, transparent);
-}
-
-.portfolio-slider::after {
-    right: 0;
-    background: linear-gradient(to left, white, transparent);
-}
-/* PLACEHOLDER IMAGES */
-
-.placeholder{
-    background:var(--card);
-    border:2px dashed var(--border);
-    border-radius:20px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:var(--muted);
-    font-weight:bold;
-    text-align:center;
-}
-
-.hero-placeholder{
-    height:500px;
-    margin:0 auto 50px;
-    max-width:1100px;
-}
-
-.project-placeholder{
-    height:300px;
-    margin-bottom:20px;
-}
-
-/* PROJECT CARD */
+/* PORTFOLIO CARD */
 
 .project-card{
     border:1px solid var(--border);
     border-radius:20px;
     padding:20px;
-    margin:40px 0;
-    transition:.3s ease;
 }
 
-.project-card:hover{
-    transform:translateY(-5px);
+/* CAROUSEL */
+
+.portfolio-slider{
+    width:100%;
+    overflow:hidden;
+    margin-bottom:30px;
 }
+
+.slider-track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation:scroll 30s linear infinite;
+}
+
+.slide{
+    width:400px;
+    height:250px;
+    flex-shrink:0;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #d9d9d9,
+        #bdbdbd
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+    color:#555;
+}
+
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-2100px);
+    }
+
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+/* BUTTON */
 
 .button{
     display:inline-block;
@@ -281,7 +230,6 @@ header{
     text-decoration:none;
     padding:12px 20px;
     border-radius:10px;
-    margin-top:10px;
 }
 
 /* CTA */
@@ -291,10 +239,6 @@ header{
     text-align:center;
     padding:80px 20px;
     margin-top:60px;
-}
-
-.cta h2{
-    margin-bottom:15px;
 }
 
 /* FOOTER */
@@ -310,382 +254,4 @@ footer{
 .reveal{
     opacity:0;
     transform:translateY(40px);
-    transition:.8s ease;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-/* PORTFOLIO SLIDER */
-
-.portfolio-slider{
-    width:100%;
-    overflow:hidden;
-    position:relative;
-    padding:20px 0;
-}
-
-.slider-track{
-    display:flex;
-    gap:20px;
-    width:max-content;
-    animation:scroll 30s linear infinite;
-}
-@media(max-width:768px){
-    /* PORTFOLIO SLIDER */
-
-.portfolio-slider{
-    width:100%;
-    overflow:hidden;
-    position:relative;
-    padding:20px 0;
-}
-
-.slider-track{
-    display:flex;
-    gap:20px;
-    width:max-content;
-    animation:scroll 30s linear infinite;
-}
-
-.slide{
-    width:400px;
-    height:250px;
-    flex-shrink:0;
-
-    background:#d9d9d9;
-    border-radius:16px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:bold;
-    color:#666;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-@keyframes scroll{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-
-}
-.slide{
-    width:400px;
-    height:250px;
-    flex-shrink:0;
-
-    background:linear-gradient(
-        135deg,
-        #d9d9d9,
-        #bdbdbd
-    );
-
-    border-radius:16px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:bold;
-    color:#666;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-@keyframes scroll{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-
-}
-    
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .hamburger{
-        display:block;
-    }
-
-    .menu{
-        display:none;
-        position:absolute;
-        top:70px;
-        left:0;
-        right:0;
-        background:var(--bg);
-        flex-direction:column;
-        padding:2rem;
-        border-bottom:1px solid var(--border);
-    }
-
-    .menu.active{
-        display:flex;
-    }
-
-    .hero h1{
-        font-size:3rem;
-    }
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<nav class="nav">
-
-<div class="logo">
-Carmen Herbert
-</div>
-
-<button id="menu-toggle" class="hamburger">
-☰
-</button>
-
-<div class="menu" id="menu">
-
-<a href="index.html">Home</a>
-<a href="process.html">Process</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="contact.html">Contact</a>
-
-<button id="theme-toggle" class="theme-btn">
-🌙
-</button>
-
-</div>
-
-</nav>
-
-</header>
-
-<main>
-
-<section id="home" class="hero reveal">
-
-<div class="breadcrumbs">
-
-<a href="index.html">Home</a>
-<span>/</span>
-
-<a href="process.html">Process</a>
-<span>/</span>
-
-<a href="portfolio.html">Portfolio</a>
-<span>/</span>
-
-<a href="contact.html">Contact</a>
-
-</div>
-
-<h1>
-Creative Experience. Learning Impact.
-</h1>
-
-<div class="meta">
-Carmen Herbert · 2026
-</div>
-
-<p class="intro">
-Drawing on two decades of experience across graphic design, multimedia, and digital learning, I design and develop visually engaging learning solutions that balance creativity with technical innovation. Each project reflects a practical, user-centred approach to creating experiences that drive performance and deliver results.
-
-<div class="hero-image home-hero"></div>
-</section>
-
-
-
-<section id="process" class="content reveal">
-
-<h2>Why This Matters</h2>
-
-<p>
-Describe the challenge, business need, learner audience and project objectives.
-</p>
-
-<p>
-Explain why the solution was important and the impact it created.
-</p>
-
-<div class="callout">
-
-<h3>Key Insight</h3>
-
-<p>
-Highlight a lesson learned, innovative solution, or strategic recommendation.
-</p>
-
-</div>
-
-<h2>Approach</h2>
-
-<p>
-Describe your learning design process, tools, collaboration methods and key decisions.
-</p>
-
-</section>
-
-<section id="portfolio" class="content reveal">
-
-<div class="project-card">
-
-
-Project 1
-Project 2
-Project 3
-Project 4
-Project 5
-Project 1
-Project 2
-Project 3
-Project 4
-Project 5
-
-
-<h3>Project Example</h3>
-
-<p>
-Add a description of your project, the challenge faced, your approach, and the results achieved.
-</p>
-
-#
-View Project
-</a>
-
-</div>
-
-</section>
-
-<section class="content reveal">
-
-<h2>Results</h2>
-
-<p>
-Summarise measurable outcomes, stakeholder feedback, learner impact, and future improvements.
-</p>
-
-</section>
-
-<section id="contact" class="cta reveal">
-
-<h2>
-Building Learning That Works
-</h2>
-
-<p>
-My development approach combines rapid prototyping, iterative design, and performance-focused learning principles to create effective digital experiences. Drawing on elements of ADDIE, SAM, and Action Mapping, I translate learning requirements into engaging, technically robust solutions, using stakeholder feedback, learner testing, and continuous refinement to ensure the final product is both impactful and user-centred.
-</p>
-
-<br>
-
-scherbert@rocketmail.com
-Get In Touch
-</a>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>© 2026 Carmen Herbert</p>
-
-</footer>
-
-<script>
-
-/* Dark Mode */
-
-const themeToggle =
-document.getElementById("theme-toggle");
-
-themeToggle.addEventListener("click",()=>{
-
-document.body.classList.toggle("dark");
-
-themeToggle.textContent =
-document.body.classList.contains("dark")
-? "☀️"
-: "🌙";
-
-});
-
-/* Mobile Menu */
-
-const menu =
-document.getElementById("menu");
-
-document
-.getElementById("menu-toggle")
-.addEventListener("click",()=>{
-
-menu.classList.toggle("active");
-
-});
-
-/* Active Page */
- 
-
-document.addEventListener("DOMContentLoaded", () => {
- 
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
-
-    document
-        .querySelectorAll(".menu a, .breadcrumbs a")
-        .forEach(link => {
-
-            const href = link.getAttribute("href");
-    
-            if (
-                href.toLowerCase() ===
-                currentPage.toLowerCase()
-            ) {
-                link.classList.add("active");
-            }
-        });
-});
-
-    
-/* Scroll Animation */
-
-const observer =
-new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("active");
-
-}
-
-});
-
-});
-
-document
-.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
-
-</script>
-
-</body>
-</html>
+    transition
