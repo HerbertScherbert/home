@@ -209,10 +209,39 @@ header{
 }
 
 .callout{
-    background:var(--card);
-    padding:30px;
-    border-radius:20px;
+    background:#f4f4f4;
+    border:3px solid #29cce6;
+    border-radius:12px;
+    padding:30px 40px;
     margin:40px 0;
+    position:relative;
+}
+
+.callout::before{
+    content:"❝";
+    position:absolute;
+    top:18px;
+    left:20px;
+    font-size:4rem;
+    line-height:1;
+    color:#29cce6;
+    font-family:Georgia, serif;
+}
+
+.callout p:first-of-type{
+    margin-left:45px;
+    margin-bottom:15px;
+    font-size:1.5rem;
+    font-style:italic;
+    color:#333;
+    line-height:1.4;
+}
+
+.callout p:last-of-type{
+    text-align:right;
+    margin-bottom:0;
+    font-size:1.3rem;
+    color:#333;
 }
 .portfolio-slider::before,
 .portfolio-slider::after {
